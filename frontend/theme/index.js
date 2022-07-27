@@ -5,15 +5,15 @@ const theme = {
 	},
 	colors: {
 		lightPeriwinkle: "#ccccdd",
-
+		general: '#343434'
 	},
 	tags: {
 		bestSellerTag: "#FF5B6F",
 		newLaunchTag: "#82C341",
 	},
 	fonts: {
-		primary: "Roboto",
-		secondary: "Lato",
+		primary: "Poppins",
+		secondary: "Roboto",
 	},
 	buttons: {
 		color: "#fff",
