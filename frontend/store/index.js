@@ -1,7 +1,7 @@
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import interviewsReducer from '../containers/Interviews/redux/reducer';
-import homeReducer from '../containers/Home/redux/reducer';
+import interviewsReducer from 'containers/Interviews/redux/reducer';
+import homeReducer from 'containers/Home/redux/reducer';
 
 import rootSaga from './saga';
 
