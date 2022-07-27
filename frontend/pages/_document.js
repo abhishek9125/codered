@@ -18,8 +18,10 @@ export default class MyDocument extends Document {
 			<Html lang="en" style={{ "height": "100%" }}>
 				<Head>
 					<title>CodeRed | Developer's Website</title>
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 					<link
-						href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
+						href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;600;800&family=Poppins:wght@200;400;600;800&display=swap"
 						rel="stylesheet"
 					/>
 					{this.props.styleTags}
