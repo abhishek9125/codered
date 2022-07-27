@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps, store }) {
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</Provider>
-
 	)
 }
 
