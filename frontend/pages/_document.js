@@ -19,7 +19,6 @@ export default class MyDocument extends Document {
 				<Head>
 					<title>CodeRed | Developer's Website</title>
 					{this.props.styleTags}
-
 				</Head>
 				<body style={{ "height": "100%" }}>
                     <Main />

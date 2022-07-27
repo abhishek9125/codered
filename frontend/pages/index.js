@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import config from 'config/env';
+import React from 'react'
 
-export default () => (
-  <div>
-    <Title>My First Next.js Page {config.domainName}</Title>
-  </div>
-);
+function index() {
+  return (
+    <div>
+      <Title>My First Next.js Page</Title>
+    </div>
+  )
+}
+
+export default index;
 
 const Title = styled.h1`
   color: red;
