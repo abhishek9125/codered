@@ -5,9 +5,9 @@ import { ServerStyleSheet } from 'styled-components';
 export default class MyDocument extends Document {
 
 	static async getInitialProps(ctx) {
-        const { renderPage } = ctx;
+		const { renderPage } = ctx;
 		const sheet = new ServerStyleSheet();
-        const initialProps = await Document.getInitialProps(ctx)
+		const initialProps = await Document.getInitialProps(ctx)
 		const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
 		const styleTags = sheet.getStyleElement();
 		return { ...initialProps, ...page, styleTags };
@@ -18,11 +18,15 @@ export default class MyDocument extends Document {
 			<Html lang="en" style={{ "height": "100%" }}>
 				<Head>
 					<title>CodeRed | Developer's Website</title>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
+						rel="stylesheet"
+					/>
 					{this.props.styleTags}
 				</Head>
 				<body style={{ "height": "100%" }}>
-                    <Main />
-                    <NextScript />
+					<Main />
+					<NextScript />
 				</body>
 			</Html>
 		);
