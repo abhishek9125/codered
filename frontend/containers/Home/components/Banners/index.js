@@ -68,6 +68,7 @@ const Wrapper = styled.div`
                 border-radius: 4px;
                 margin-right: 15px;
                 cursor: pointer;
+                border: 1px solid ${({ theme }) => theme.general.primaryColor};
             }
 
             .button2 {
