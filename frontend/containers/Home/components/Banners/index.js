@@ -33,7 +33,7 @@ const Wrapper = styled.div`
     justify-content: space-around;
     height: 400px;
     background-size: cover;
-    margin: 50px 130px;
+    margin: 50px 110px;
     padding-bottom: 30px;
 
     .left-box {
