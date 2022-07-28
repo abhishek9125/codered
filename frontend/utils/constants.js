@@ -82,5 +82,23 @@ export const HEADER_CONSTANTS = [
             }
         ]
     }
+];
 
-]
+export const INTERVIEW_TOPICS = [
+    {
+        title: 'Programming Fundamentals',
+        gradient: 'linear-gradient(180deg,#33006F99,#33006F)'
+    },
+    {
+        title: 'Data Structures',
+        gradient: 'linear-gradient(180deg,#fe793199,#fe7931)'
+    },
+    {
+        title: 'Advanced Algorithms',
+        gradient: 'linear-gradient(180deg,#98d1a4,#2dbe4c)'
+    },
+    {
+        title: 'Maths & Number Theory',
+        gradient: 'linear-gradient(180deg,#FF375399,#FF3753)'
+    }
+];

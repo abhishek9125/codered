@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
 function Footer() {
     return (
-        <div>
-            Chalo
-        </div>
+        <Wrapper>
+        </Wrapper>
     )
 }
 
-export default Footer
+export default Footer;
+
+const Wrapper = styled.div`
+
+    height: 500px;
+
+`;
