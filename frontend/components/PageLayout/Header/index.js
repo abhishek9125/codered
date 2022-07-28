@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Tab from './Tab';
 import { HEADER_CONSTANTS } from 'utils/constants';
+import CustomButtons from './CustomButtons';
 
 function Header() {
     return (
@@ -21,6 +22,9 @@ function Header() {
                 }
             </div>
 
+            <CustomButtons />
+
+
         </Wrapper>
     )
 }
@@ -35,7 +39,7 @@ const Wrapper = styled.div`
     display: flex;
 
     .logo {
-        color: red;
+        color: ${({ theme }) => theme.general.primaryColor};
         font-size: 24px;
         font-weight: 600;
         padding: 0px 20px;

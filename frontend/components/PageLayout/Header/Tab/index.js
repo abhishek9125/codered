@@ -9,13 +9,12 @@ function Tab({ data }) {
                     <div className="title">
                         <span>
                             {data.name}
-                            
-                        {
-                            isDropdown ?
-                            <img className="down-arrow-image" src="https://ninjasfilestest.s3.amazonaws.com/arrow-small-down-1698.svg" />
-                            :
-                            <img className="streak-image" src="https://ninjasfilestest.s3.amazonaws.com/flame-1700.png" />
-                        }
+                            {
+                                isDropdown ?
+                                <img className="down-arrow-image" src="https://ninjasfilestest.s3.amazonaws.com/arrow-small-down-1698.svg" />
+                                :
+                                <img className="streak-image" src="https://ninjasfilestest.s3.amazonaws.com/flame-1700.png" />
+                            }
                         </span>
                     </div>
                     {
@@ -96,6 +95,7 @@ const Wrapper = styled.div`
         width: 240px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        border-bottom: 2px solid #ff3753;
     }
 
     .dropdown-content div {
@@ -104,7 +104,7 @@ const Wrapper = styled.div`
         display: block;
 
         &:hover {
-            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 4%);
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 6%);
             background-color: #fff;
 
         }
