@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Banners from './components/Banners'
 import Categories from './components/Categories';
 import ProblemSets from './components/ProblemSets';
+import Trending from './components/Trending';
 
 function HomeContainer() {
     return (
@@ -16,7 +17,7 @@ function HomeContainer() {
                     <ProblemSets />
                 </div>
                 <div className="side-section">
-                    Hello World
+                    <Trending />
                 </div>
             </div>
         </Wrapper>
@@ -38,7 +39,7 @@ const Wrapper = styled.div`
     }
 
     .side-section {
-        width: 25%;
+        width: 30%;
     }
 
 `;

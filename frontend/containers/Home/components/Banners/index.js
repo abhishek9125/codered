@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Banenrs() {
+function Banners() {
     return (
         <Wrapper>
-            {/* <img src = */}
             <div className="left-box">
                 <div className="title">One-stop destination to crack</div>
                 <div className="subtitle">Your Next Big Tech <br />Interview</div>
@@ -24,7 +23,7 @@ function Banenrs() {
     )
 }
 
-export default Banenrs
+export default Banners;
 
 const Wrapper = styled.div`
     
