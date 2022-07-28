@@ -1,16 +1,10 @@
-import styled from 'styled-components';
 import React from 'react'
+import HomeContainer from 'containers/Home';
 
 function index() {
-  return (
-    <div>
-      <Title>My First Next.js Page</Title>
-    </div>
-  )
+	return (
+		<HomeContainer />
+  	)
 }
 
 export default index;
-
-const Title = styled.h1`
-  color: red;
-`;

@@ -1,15 +1,9 @@
 const theme = {
 	general: {
-		primaryColor: "#00AFEF",
-
+		primaryColor: "#FF3753",
 	},
 	colors: {
-		lightPeriwinkle: "#ccccdd",
 		general: '#343434'
-	},
-	tags: {
-		bestSellerTag: "#FF5B6F",
-		newLaunchTag: "#82C341",
 	},
 	fonts: {
 		primary: "Poppins",
