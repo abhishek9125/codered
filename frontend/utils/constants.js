@@ -102,3 +102,18 @@ export const INTERVIEW_TOPICS = [
         gradient: 'linear-gradient(180deg,#FF375399,#FF3753)'
     }
 ];
+
+export const PROBLEM_SET_LIST = [
+    {
+        title: 'Top Salesforce Coding Interview Questions',
+        title: 'Top Pointers Practice Questions (C and CPP)',
+        title: 'Top String Coding Interview Questions',
+        title: 'Top Maths and Number Theory Questions',
+        title: 'Mohammad Fraz Beginner DSA Sheet Problems',
+        title: 'Love Babbar DSA Sheet Problems',
+        title: 'Top 100 SQL Problems',
+        title: 'Mohammad Fraz DSA Sheet Problems',
+        title: 'Nishant Chahar SDE Sheet Problems',
+        title: 'Siddharth Singh Coding Sheet Problems',
+    }
+]

@@ -18,11 +18,11 @@ function Categories() {
                     INTERVIEW_TOPICS.map((topic, index) => (     
                         <Card gradient={topic.gradient} key={index}>
                                 {topic.title}
-                            </Card>
+                        </Card>
                     ))
                 }
             </div>
-            
+
         </Wrapper>
     )
 }
