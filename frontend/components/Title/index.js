@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Title({ title, description }) {
+function Title({ title, description, setActive = null, active = null }) {
+
+    const text = active ? 'See Less' : 'See More';
+
     return (
         <Wrapper>
             <div className="title">
@@ -12,8 +15,8 @@ function Title({ title, description }) {
                 <div className="subtitle">
                     {description}
                 </div>
-                <div className="see-more">
-                    See More
+                <div className="see-more" onClick={() => { setActive ? setActive(!active) : null }}>
+                    {text}
                 </div>
             </div>
         </Wrapper>
