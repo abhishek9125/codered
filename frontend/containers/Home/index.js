@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import Banners from './components/Banners'
 import Categories from './components/Categories';
 import ProblemSets from './components/ProblemSets';
+import ProblemSection from './components/ProblemSection';
 import Trending from './components/Trending';
 
 function HomeContainer() {
+
     return (
         <Wrapper>
             <Banners />
@@ -15,6 +17,8 @@ function HomeContainer() {
                     <Categories />
                     <Gap height="40px" />
                     <ProblemSets />
+                    <Gap height="40px" />
+                    <ProblemSection />
                 </div>
                 <div className="side-section">
                     <Trending />

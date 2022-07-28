@@ -10,3 +10,4 @@
 "https://api.codingninjas.com/api/v3/public_section/whats_new_details?count=1"
 "https://api.codingninjas.com/api/v3/public_section/list_page_top_lists"
 "https://api.codingninjas.com/api/v3/public_section/top_interview_experiences"
+"https://api.codingninjas.com/api/v3/public_section/landing/recent_problems"
