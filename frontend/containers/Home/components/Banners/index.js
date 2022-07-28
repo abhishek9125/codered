@@ -72,7 +72,7 @@ const Wrapper = styled.div`
 
             .button2 {
                 color: ${({ theme }) => theme.general.primaryColor};
-                background-color: #feeee5;   
+                background-color: white;   
                 border-radius: 4px;
                 padding: 7px 10px;
                 height: max-content;

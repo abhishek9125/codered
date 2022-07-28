@@ -56,4 +56,10 @@ const Card = styled.div`
     align-items: center;
     text-align: center;
     cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 14px rgb(24 4 50 / 30%);
+        transition: box-shadow .15s linear;
+    }
+
 `;

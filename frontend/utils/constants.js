@@ -105,15 +105,78 @@ export const INTERVIEW_TOPICS = [
 
 export const PROBLEM_SET_LIST = [
     {
-        title: 'Top Salesforce Coding Interview Questions',
-        title: 'Top Pointers Practice Questions (C and CPP)',
-        title: 'Top String Coding Interview Questions',
-        title: 'Top Maths and Number Theory Questions',
-        title: 'Mohammad Fraz Beginner DSA Sheet Problems',
-        title: 'Love Babbar DSA Sheet Problems',
-        title: 'Top 100 SQL Problems',
-        title: 'Mohammad Fraz DSA Sheet Problems',
-        title: 'Nishant Chahar SDE Sheet Problems',
-        title: 'Siddharth Singh Coding Sheet Problems',
-    }
+        "name": "Top Salesforce Coding Interview Questions",
+        "slug": "top-salesforce-coding-interview-questions",
+        "show_in_explore": false
+    },
+    {
+        "name": "Top Pointers Practice Questions (C and CPP)",
+        "slug": "top-pointers-practice-questions-c-and-cpp",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top String Coding Interview Questions",
+        "slug": "top-string-coding-interview-questions",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top Maths and Number Theory Questions",
+        "slug": "top-maths-and-number-theory-questions",
+        "show_in_explore": true
+    },
+    {
+        "name": "Mohammad Fraz Beginner DSA Sheet Problems",
+        "slug": "mohammad-fraz-beginner-dsa-sheet-problems",
+        "show_in_explore": false
+    },
+    {
+        "name": "Love Babbar DSA Sheet Problems",
+        "slug": "love-babbar-dsa-sheet-problems",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top 100 SQL Problems",
+        "slug": "top-100-sql-problems",
+        "show_in_explore": true
+    },
+    {
+        "name": "Mohammad Fraz DSA Sheet Problems",
+        "slug": "mohammad-fraz-dsa-sheet-problems",
+        "show_in_explore": true
+    },
+    {
+        "name": "Nishant Chahar SDE Sheet Problems",
+        "slug": "nishant-chahar-sde-sheet-problems",
+        "show_in_explore": false
+    },
+    {
+        "name": "Siddharth Singh Coding Sheet Problems",
+        "slug": "siddharth-singh-coding-sheet-problems",
+        "show_in_explore": false
+    },
+    {
+        "name": "Striver SDE Sheet Problems",
+        "slug": "striver-sde-sheet-problems",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top Graphs Interview Questions",
+        "slug": "top-graphs-interview-questions",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top Trees Interview Questions",
+        "slug": "top-trees-interview-questions",
+        "show_in_explore": false
+    },
+    {
+        "name": "Top Uber Coding Interview Questions",
+        "slug": "top-uber-coding-interview-questions",
+        "show_in_explore": true
+    },
+    {
+        "name": "Top Dynamic Programming Questions",
+        "slug": "top-dynamic-programming-questions",
+        "show_in_explore": true
+    },
 ]
