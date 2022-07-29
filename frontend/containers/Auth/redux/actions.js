@@ -7,7 +7,7 @@ export function showLoginCard(payload) {
     };
 }
 
-export function hideLogiCard(payload) {
+export function hideLoginCard(payload) {
     return {
         type: actionTypes.HIDE_LOGIN_CARD,
         payload,
