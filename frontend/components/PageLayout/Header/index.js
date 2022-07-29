@@ -3,8 +3,15 @@ import styled from 'styled-components';
 import Tab from './Tab';
 import { HEADER_CONSTANTS } from 'utils/constants';
 import CustomButtons from './CustomButtons';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { makeSelectShowCard } from 'containers/Auth/redux/selectors';
+import LoginCard from 'containers/Auth/components/LoginCard';
 
-function Header() {
+function Header({ showCard }) {
+
+    console.log(`showCard`, showCard)
+
     return (
         <Wrapper>
             
@@ -23,13 +30,18 @@ function Header() {
             </div>
 
             <CustomButtons />
-
+            
+            {showCard && <LoginCard />}
 
         </Wrapper>
     )
 }
 
-export default Header;
+const mapStateToProps = createStructuredSelector({
+    showCard: makeSelectShowCard(),
+});
+
+export default connect(mapStateToProps, null)(Header);
 
 const Wrapper = styled.div`
     height: 45px;

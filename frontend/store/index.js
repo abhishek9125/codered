@@ -2,6 +2,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import interviewsReducer from 'containers/Interviews/redux/reducer';
 import homeReducer from 'containers/Home/redux/reducer';
+import authReducer from 'containers/Auth/redux/reducer';
 
 import rootSaga from './saga';
 
@@ -23,8 +24,9 @@ function configureStore(initialState = {}, { isServer = false, req = null }) {
     const store = createStore(
 
         combineReducers({
-            interviews: interviewsReducer,
+            auth: authReducer,
             home: homeReducer,
+            interviews: interviewsReducer,
         }),
         initialState,
         bindMiddleware([sagaMiddleware]),

@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showLoginCard } from 'containers/Auth/redux/actions';
 
-function CustomButtons() {
+function CustomButtons({ showLoginCard }) {
 
     const isLoggedIn = true;
+
 
     return (
         <Wrapper>
@@ -11,7 +15,7 @@ function CustomButtons() {
                 Problem of the Day
             </div>
 
-            <div className="login-button">
+            <div className="login-button" onClick={() => showLoginCard()}>
                 Login
             </div>
         </Wrapper>
@@ -19,8 +23,12 @@ function CustomButtons() {
 
 }
 
-export default CustomButtons;
-
+const mapDispatchToProps = dispatch => ({
+    showLoginCard: bindActionCreators(showLoginCard, dispatch),
+});
+  
+export default connect(null, mapDispatchToProps)(CustomButtons);
+  
 const Wrapper = styled.div`
 
     display: flex;
