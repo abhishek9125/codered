@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "dotenv": "^16.0.1",
     "immer": "9.0.15",
     "next": "^12.2.3",
@@ -21,7 +22,6 @@
     "react-redux": "7.1",
     "redux": "4.0.0",
     "redux-saga": "1.1.1",
-    "reselect": "4.1.6",
     "styled-components": "5.3.5"
   },
   "devDependencies": {
