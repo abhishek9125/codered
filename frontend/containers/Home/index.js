@@ -6,6 +6,8 @@ import Categories from './components/Categories';
 import ProblemSets from './components/ProblemSets';
 import ProblemSection from './components/ProblemSection';
 import Trending from './components/Trending';
+import BestExperiences from 'components/BestExperiences';
+import Separator from 'components/Separator';
 
 function HomeContainer() {
 
@@ -22,6 +24,8 @@ function HomeContainer() {
                 </div>
                 <div className="side-section">
                     <Trending />
+                    <Separator />
+                    <BestExperiences />
                 </div>
             </div>
         </Wrapper>

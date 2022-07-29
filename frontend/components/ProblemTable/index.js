@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 function ProblemTable({ problems }) {
-    console.log(`problems`, problems)
+    
     return (
         <Wrapper>
             <div className="table-header">
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
         font-weight: 400;
         letter-spacing: 0.8px;
         padding-bottom: 30px;
-        
+
         .header-submitted {
             width: 5%;
             min-width: 20px;
