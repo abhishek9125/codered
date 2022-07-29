@@ -10,8 +10,6 @@ import LoginCard from 'containers/Auth/components/LoginCard';
 
 function Header({ showCard }) {
 
-    console.log(`showCard`, showCard)
-
     return (
         <Wrapper>
             
