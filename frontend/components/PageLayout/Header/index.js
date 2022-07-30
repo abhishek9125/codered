@@ -7,15 +7,18 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectShowCard, makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
 import LoginCard from 'containers/Auth/components/LoginCard';
+import Link from 'next/link';
 
 function Header({ showCard, isLoggedIn }) {
 
     return (
         <Wrapper>
             
-            <div className="logo">
-                CodeRed
-            </div>
+            <Link href="/">
+                <div className="logo">
+                    CodeRed
+                </div>
+            </Link>
 
             <div className="tabs">
                 {
@@ -57,6 +60,7 @@ const Wrapper = styled.div`
         padding: 0px 20px;
         letter-spacing: 1px;
         margin: auto 0px;
+        cursor: pointer;
     }
 
     .tabs {

@@ -11,8 +11,8 @@ import { customToast } from 'config/toast';
 
 function LoginCard({ hideLoginCard, setUserData }) {
 
-    const [email, setEmail] = useState("abcdsd@gmail.com");
-    const [password, setPassword] = useState("abcdefgh");
+    const [email, setEmail] = useState("abhishek4075@gmail.com");
+    const [password, setPassword] = useState("abhishek");
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
