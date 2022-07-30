@@ -30,8 +30,8 @@ exports.signup = async (req, res) => {
     const userExists = await User.findOne({ email });
 
     if(userExists) {
-        return res.json({
-            error: 'Email is already taken.'
+        return res.status(400).json({
+            message: 'Email is already taken.'
         });
     }
 

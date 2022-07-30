@@ -29,7 +29,7 @@ function Header({ showCard, isLoggedIn }) {
 
             <CustomButtons />
             
-            {showCard && isLoggedIn && <LoginCard />}
+            {showCard && !isLoggedIn && <LoginCard />}
 
         </Wrapper>
     )
@@ -48,6 +48,7 @@ const Wrapper = styled.div`
     position: sticky;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 7%);
     display: flex;
+    top: 0px;
 
     .logo {
         color: ${({ theme }) => theme.general.primaryColor};
