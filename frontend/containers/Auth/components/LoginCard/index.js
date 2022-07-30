@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import Overlay from 'components/Overlay';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { hideLoginCard,setUserData } from 'containers/Auth/redux/actions';
+import Link from 'next/link';
+import { hideLoginCard, setUserData } from 'containers/Auth/redux/actions';
 import axios from 'axios';
 import config from 'config/env';
+import { customToast } from 'config/toast';
 
 function LoginCard({ hideLoginCard, setUserData }) {
 
@@ -23,6 +25,7 @@ function LoginCard({ hideLoginCard, setUserData }) {
             setUserData(userDetails);
             localStorage.setItem('user', JSON.stringify(userDetails));
             axios.defaults.headers.common["Authorization"] = `Bearer ${userDetails.token}`;
+            customToast('Login Successful..!!', true);
             hideLoginCard();
         } catch(error) {
             console.log('Error Logging User In : ', error);
@@ -87,9 +90,11 @@ function LoginCard({ hideLoginCard, setUserData }) {
                     <div className="forgot">
                         Forgot Password?
                     </div>
-                    <div className="signup">
-                        Sign Up
-                    </div>
+                    <Link href="/register">
+                        <div className="signup" onClick={() => hideLoginCard()}>
+                            Sign Up
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="policy">
@@ -205,6 +210,10 @@ const Wrapper = styled.div`
         width: 2px;
         background-color: #333;
         transform: rotate(-45deg);
+        cursor: pointer;
+    }
+
+    .signup {
         cursor: pointer;
     }
 `;

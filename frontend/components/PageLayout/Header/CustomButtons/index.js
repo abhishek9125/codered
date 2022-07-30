@@ -3,10 +3,17 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
-import { showLoginCard } from 'containers/Auth/redux/actions';
+import { showLoginCard, setUserData } from 'containers/Auth/redux/actions';
 import { makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
+import { customToast } from 'config/toast';
 
-function CustomButtons({ showLoginCard, isLoggedIn }) {
+function CustomButtons({ showLoginCard, setUserData, isLoggedIn }) {
+
+    const logout = () => {        
+        localStorage.removeItem('user');
+        setUserData(null);
+        customToast('Logout Successful..!!', true);
+    }
 
     return (
         <Wrapper>
@@ -14,7 +21,7 @@ function CustomButtons({ showLoginCard, isLoggedIn }) {
                 Problem of the Day
             </div>
 
-            <div className="login-button" onClick={() => showLoginCard()}>
+            <div className="login-button" onClick={() => isLoggedIn ? logout() : showLoginCard()}>
                 {!isLoggedIn ? 'Login' : 'Log Out'}
             </div>
         </Wrapper>
@@ -23,6 +30,7 @@ function CustomButtons({ showLoginCard, isLoggedIn }) {
 }
 
 const mapDispatchToProps = dispatch => ({
+    setUserData: bindActionCreators(setUserData, dispatch),
     showLoginCard: bindActionCreators(showLoginCard, dispatch),
 });
 
