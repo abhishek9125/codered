@@ -5,10 +5,10 @@ import { HEADER_CONSTANTS } from 'utils/constants';
 import CustomButtons from './CustomButtons';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { makeSelectShowCard } from 'containers/Auth/redux/selectors';
+import { makeSelectShowCard, makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
 import LoginCard from 'containers/Auth/components/LoginCard';
 
-function Header({ showCard }) {
+function Header({ showCard, isLoggedIn }) {
 
     return (
         <Wrapper>
@@ -29,7 +29,7 @@ function Header({ showCard }) {
 
             <CustomButtons />
             
-            {showCard && <LoginCard />}
+            {showCard && isLoggedIn && <LoginCard />}
 
         </Wrapper>
     )
@@ -37,6 +37,7 @@ function Header({ showCard }) {
 
 const mapStateToProps = createStructuredSelector({
     showCard: makeSelectShowCard(),
+    isLoggedIn: makeSelectLoggedIn(),
 });
 
 export default connect(mapStateToProps, null)(Header);

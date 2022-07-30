@@ -13,3 +13,10 @@ export function hideLoginCard(payload) {
         payload,
     }
 }
+
+export function setUserData(payload) {
+    return {
+        type: actionTypes.SET_USER_DATA,
+        payload,
+    }
+}

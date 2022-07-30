@@ -9,15 +9,12 @@ function BestExperiences() {
 
     const getExperiences = async () => {
         const response = await axios.get("https://api.codingninjas.com/api/v3/public_section/top_interview_experiences");
-        console.log(`response`, response)
         setExperiences(response.data.data.top_interview_experiences)
     }
 
     useEffect(() => {
         getExperiences();
     }, [])
-
-    console.log(`experiences`, experiences)
 
     return (
         <Wrapper>
