@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { showLoginCard } from 'containers/Auth/redux/actions';
+import { makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
 
-function CustomButtons({ showLoginCard }) {
-
-    const isLoggedIn = true;
-
+function CustomButtons({ showLoginCard, isLoggedIn }) {
 
     return (
         <Wrapper>
@@ -16,7 +15,7 @@ function CustomButtons({ showLoginCard }) {
             </div>
 
             <div className="login-button" onClick={() => showLoginCard()}>
-                Login
+                {!isLoggedIn ? 'Login' : 'Log Out'}
             </div>
         </Wrapper>
     )
@@ -26,8 +25,13 @@ function CustomButtons({ showLoginCard }) {
 const mapDispatchToProps = dispatch => ({
     showLoginCard: bindActionCreators(showLoginCard, dispatch),
 });
+
+const mapStateToProps = createStructuredSelector({
+    isLoggedIn: makeSelectLoggedIn(),
+});
+
   
-export default connect(null, mapDispatchToProps)(CustomButtons);
+export default connect(mapStateToProps, mapDispatchToProps)(CustomButtons);
   
 const Wrapper = styled.div`
 

@@ -7,7 +7,8 @@ export const initialState = {
     error: false,
     data: {
         showCard: false,
-        user: false,
+        user: null,
+        isLoggedIn: false,
     },
 };
 
@@ -22,6 +23,12 @@ function authReducer(state = clone(initialState), { type, payload, error }) {
 
             case actionTypes.HIDE_LOGIN_CARD: {
                 draft.data.showCard = false;
+                break;
+            }
+
+            case actionTypes.SET_USER_DATA: {
+                draft.data.user = payload;
+                draft.data.isLoggedIn = payload ? true : false;
                 break;
             }
 

@@ -3,14 +3,16 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
 const {
-	NODE_ENV,
+	API_URL,
 	DOMAIN_NAME,
+	NODE_ENV,
 
 } = publicRuntimeConfig;
 
 const config = {
-	nodeEnv: NODE_ENV,
+	apiUrl: API_URL,
 	domainName: DOMAIN_NAME,
+	nodeEnv: NODE_ENV,
 };
 
 export default config;

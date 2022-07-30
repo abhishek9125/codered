@@ -103,7 +103,6 @@ exports.signin = async (req, res) => {
 
 
 exports.fetchUserDetails = async (req, res) => {
-    console.log(`req`, req)
     return res.status(200).json({
         status: true,
         message: 'User Details Fetched Successfully',

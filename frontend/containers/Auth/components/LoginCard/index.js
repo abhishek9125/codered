@@ -3,12 +3,34 @@ import styled from 'styled-components';
 import Overlay from 'components/Overlay';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { hideLoginCard } from 'containers/Auth/redux/actions';
+import { hideLoginCard,setUserData } from 'containers/Auth/redux/actions';
+import axios from 'axios';
+import config from 'config/env';
 
-function LoginCard({ hideLoginCard }) {
+function LoginCard({ hideLoginCard, setUserData }) {
 
-    const [email, setEmail] = useState("abhishek40407@gmail.com");
-    const [password, setPassword] = useState("abhishek");
+    const [email, setEmail] = useState("abcdsd@gmail.com");
+    const [password, setPassword] = useState("abcdefgh");
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            setLoading(true);
+            const response = await axios.post(`${config.apiUrl}/auth/signin`, { email, password });
+            const userDetails = response.data.data;            
+            setUserData(userDetails);
+            localStorage.setItem('user', JSON.stringify(userDetails));
+            axios.defaults.headers.common["Authorization"] = `Bearer ${userDetails.token}`;
+            hideLoginCard();
+        } catch(error) {
+            console.log('Error Logging User In : ', error);
+        }
+
+        setLoading(false);
+
+    }
 
     return (
         <>
@@ -55,8 +77,8 @@ function LoginCard({ hideLoginCard }) {
 
                     <button 
                         className="button"
-                        // onClick={handleSubmit}
-                        // disabled={!email || password.length < 6 || loading}
+                        onClick={handleSubmit}
+                        disabled={!email || password.length < 6 || loading}
                     >
                         Login with Email/Password
                     </button>
@@ -79,6 +101,7 @@ function LoginCard({ hideLoginCard }) {
 }
 
 const mapDispatchToProps = dispatch => ({
+    setUserData: bindActionCreators(setUserData, dispatch), 
     hideLoginCard: bindActionCreators(hideLoginCard, dispatch),
 });
   
