@@ -17,10 +17,8 @@ function MyApp({ Component, pageProps, store }) {
 		
 		if(userData) {
 			customAxios(userData.token)
-			window.__NEXT_REDUX_STORE__.dispatch(setUserData(userData));
-			console.log(`response`, response)
             const response = await axios.get(`${config.apiUrl}/auth/fetchUserDetails`);
-
+			window.__NEXT_REDUX_STORE__.dispatch(setUserData(response.data.data));
 		}
 
     },[])

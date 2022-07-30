@@ -12,7 +12,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
 
     const [firstName, setFirstName] = useState("Abhishek");
     const [lastName, setLastName] = useState("Agarwal");
-    const [email, setEmail] = useState("abhishek@gmail.com");
+    const [email, setEmail] = useState("abhishek4075@gmail.com");
     const [password, setPassword] = useState("abhishek");
     const [college, setCollege] = useState("Thapar Institute of Engineering & Technology");
     const [linkedIn, setLinkedIn] = useState("someRandomId");

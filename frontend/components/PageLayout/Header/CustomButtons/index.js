@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { showLoginCard, setUserData } from 'containers/Auth/redux/actions';
 import { makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
 import { customToast } from 'config/toast';
+import Link from 'next/link';
 
 function CustomButtons({ showLoginCard, setUserData, isLoggedIn }) {
 
@@ -21,9 +22,15 @@ function CustomButtons({ showLoginCard, setUserData, isLoggedIn }) {
                 Problem of the Day
             </div>
 
-            <div className="login-button" onClick={() => isLoggedIn ? logout() : showLoginCard()}>
+            <Link href="/dashboard/admin">
+                <div className="login-button">
+                    Dashboard
+                </div>
+            </Link>
+
+            {/* <div className="login-button" onClick={() => isLoggedIn ? logout() : showLoginCard()}>
                 {!isLoggedIn ? 'Login' : 'Log Out'}
-            </div>
+            </div> */}
         </Wrapper>
     )
 
