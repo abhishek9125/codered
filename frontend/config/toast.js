@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 
-export const customToast = (message, success = false, marginTop = '40px') => {
+export const customToast = (message, success = false) => {
 
     if(success) {
         toast.success(message, {
@@ -10,7 +10,6 @@ export const customToast = (message, success = false, marginTop = '40px') => {
                 borderRadius: '10px',
                 background: '#333',
                 color: '#fff',
-                marginTop
             },
         });
     } else {
@@ -21,7 +20,6 @@ export const customToast = (message, success = false, marginTop = '40px') => {
                 borderRadius: '10px',
                 background: '#333',
                 color: '#fff',
-                marginTop
             },
         });
     }

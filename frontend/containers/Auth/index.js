@@ -32,6 +32,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
 
             setLoading(true);
@@ -46,7 +47,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
 
 
         } catch(error) {
-            customToast(error.response.data.message, false, '0px');
+            customToast(error.response.data.message);
             console.log('Error Logging User In : ', error.response.data.message);
         }
 
@@ -147,7 +148,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
                                 <button 
                                     className="button"
                                     onClick={handleSubmit}
-                                    disabled={!firstName || !firstName || !email || password.length < 6 || loading}
+                                    disabled={loading}
                                 >
                                     Sign Up
                                 </button>

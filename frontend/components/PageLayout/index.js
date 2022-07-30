@@ -16,7 +16,12 @@ function PageLayout({ children }) {
     return (
         <ThemeProvider theme={theme}>
             <Fragment>
-                <Toaster />
+                <Toaster 
+                    containerStyle={{
+                        top: showLayout ? 60 : 10,
+                        right: 20,
+                    }}
+                />
                 {showLayout && <Header />}
                 {showLayout && <Promotions />}
                 {children}
