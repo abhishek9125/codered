@@ -112,5 +112,4 @@ exports.fetchAllCompanies = async (req, res) => {
             error: error.message
         })
     }
-    
 }

@@ -25,7 +25,11 @@ const categorySchema = new mongoose.Schema({
     categories: [{
         type: id,
         ref: 'Category'
-    }]
+    }],
+    active: {
+        type: Boolean,
+        default: true
+    }
 }, {
     timestamps: true
 });

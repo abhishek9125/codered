@@ -17,6 +17,10 @@ const listSchema = new mongoose.Schema({
         required: true,
         unique: true,
         index: true
+    },
+    active: {
+        type: Boolean,
+        default: true
     }
 }, {
     timestamps: true
