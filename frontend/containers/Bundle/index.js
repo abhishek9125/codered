@@ -19,8 +19,6 @@ function BundleContainer() {
         getBundles();
     }, [])
 
-    console.log(`bundles`, bundles)
-
     return (
         <Wrapper>
             <Banner />
