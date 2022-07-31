@@ -75,12 +75,12 @@ exports.updateCompany = async (req, res) => {
             });
         }
 
-        await Company.findOneAndUpdate({ slug }, { ...req.body, newSlug } , { new: true }).exec();
+        await Company.findOneAndUpdate({ slug }, { ...req.body, slug: newSlug } , { new: true }).exec();
 
         return res.json({
             status: true,
             message: 'Company Updated Successfully',
-            data: { name, description, logo, slug, id : company.id }
+            data: { name, description, logo, newSlug, id : company.id }
         });
 
     } catch (error) {

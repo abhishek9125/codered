@@ -52,7 +52,8 @@ const Wrapper = styled.div`
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 7%);
     display: flex;
     top: 0px;
-
+    z-index: 200;
+    
     .logo {
         color: ${({ theme }) => theme.general.primaryColor};
         font-size: 24px;

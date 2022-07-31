@@ -36,7 +36,8 @@ const Wrapper = styled.div`
     background-image: url('https://files.codingninjas.in/new-contest-notification-16905.svg');
     background-size: cover;
     font-family: ${({ theme }) => theme.fonts.primary};
-
+    height: 50px;
+    
     .middle-section {
         display: flex;
     }
