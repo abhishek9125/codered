@@ -15,8 +15,8 @@ function RegisterContainer({ showLoginCard, setUserData }) {
     const [email, setEmail] = useState("abhishek4075@gmail.com");
     const [password, setPassword] = useState("abhishek");
     const [college, setCollege] = useState("Thapar Institute of Engineering & Technology");
-    const [linkedIn, setLinkedIn] = useState("someRandomId");
-    const [github, setGithub] = useState("someGithubRepos");
+    const [linkedIn, setLinkedIn] = useState("https://www.linkedin.com/in/abhishek-agarwal-2192ba190/");
+    const [github, setGithub] = useState("https://github.com/abhishek9125");
     const [loading, setLoading] = useState(false);
 
     const router = useRouter();
@@ -36,7 +36,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
         try {
 
             setLoading(true);
-            const payload = { firstName, lastName, name: firstName, email, password, college, linkedIn, github };
+            const payload = { firstName, lastName, email, password, college, linkedIn, github };
             const response = await axios.post(`${config.apiUrl}/auth/signup`, payload);
             const userDetails = response.data.data;         
             setUserData(userDetails);
@@ -47,6 +47,7 @@ function RegisterContainer({ showLoginCard, setUserData }) {
 
 
         } catch(error) {
+            console.log(`error`, error)
             customToast(error.response.data.message);
             console.log('Error Logging User In : ', error.response.data.message);
         }

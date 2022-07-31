@@ -22,15 +22,15 @@ function CustomButtons({ showLoginCard, setUserData, isLoggedIn }) {
                 Problem of the Day
             </div>
 
-            <Link href="/dashboard/admin">
+            {/* <Link href="/dashboard/admin">
                 <div className="login-button">
                     Dashboard
                 </div>
-            </Link>
+            </Link> */}
 
-            {/* <div className="login-button" onClick={() => isLoggedIn ? logout() : showLoginCard()}>
+            <div className="login-button" onClick={() => isLoggedIn ? logout() : showLoginCard()}>
                 {!isLoggedIn ? 'Login' : 'Log Out'}
-            </div> */}
+            </div>
         </Wrapper>
     )
 
