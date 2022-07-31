@@ -122,7 +122,7 @@ exports.updateLevel = async (req, res) => {
 exports.fetchAllLevels = async (req, res) => {
     
     try {
-        const levels = await Level.find({}, 'name threshold level color_badge shadow_badge')
+        const levels = await Level.find({}, 'name threshold level color_badge shadow_badge -_id')
         .sort([['createdAt', 'asc']])
         .exec();
 

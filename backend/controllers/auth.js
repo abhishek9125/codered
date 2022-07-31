@@ -4,12 +4,12 @@ const User = require('../models/user');
 
 exports.signup = async (req, res) => {
 
-    const { name, email, password } = req.body;
+    const { firstName, lastName, email, password, college, linkedIn, github } = req.body;
 
-    if(!name) {
+    if(!firstName) {
         return res.status(400).json({
             status: false,
-            message: 'Name is required.'
+            message: 'First Name is required.'
         });
     }
 
@@ -39,14 +39,23 @@ exports.signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     try {
-        const user = await User.create({ name, email, password: hashedPassword });
+        
+        const user = await User.create({ 
+            firstName, lastName, email, password, college, linkedIn, github, password: hashedPassword 
+        });
+
         return res.json({
             status: true,
             message: 'User Registered Successfully',
             data: {
                 id: user.id,
-                name: user.name,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 email: user.email,
+                college: user.college,
+                linkedIn: user.linkedIn,
+                github: user.github,
+                role: user.role,
                 token: generateToken(user._id),
             }
         });
@@ -82,8 +91,12 @@ exports.signin = async (req, res) => {
                 message: 'Login Successful',
                 data: {
                     id: user.id,
-                    name: user.name,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
                     email: user.email,
+                    college: user.college,
+                    linkedIn: user.linkedIn,
+                    github: user.github,
                     role: user.role,
                     token: generateToken(user._id),
                 }

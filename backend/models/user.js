@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name: {
+    firstName: {
         type: String,
-        required: [true, 'Name is Required'],
+        required: true,
+    },
+    lastName: {
+        type: String,
     },
     email: {
         type: String,
@@ -19,7 +22,66 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: 'developer'
     },
-
+    college: {
+        type: String,
+    },
+    linkedInId: {
+        type: String,
+    },
+    githubId: {
+        type: String,
+    },
+    points: {
+        type: Number,
+        default: 0,
+    },
+    attempted: {
+        type: Number,
+        default: 0,
+    },
+    solved: {
+        type: Number,
+        default: 0,
+    },
+    currentStreak: {
+        type: Number,
+        default: 0,
+    },
+    longestStreak: {
+        type: Number,
+        default: 0,
+    },
+    contributionMap: [{
+        date: Date,
+        count: {
+            easy: {
+                type: Number,
+                default: 0
+            },
+            medium: {
+                type: Number,
+                default: 0
+            },
+            hard: {
+                type: Number,
+                default: 0
+            },
+            radiant: {
+                type: Number,
+                default: 0
+            }
+        }
+    }]
+    // problemsSolved: [{
+    //     solved: {
+    //         type: Boolean,
+    //         default: false
+    //     },
+    //     problem: {
+    //         type: ObjectId, 
+    //         ref: 'Problems'
+    //     }
+    //  }]
 }, {
     timestamps: true
 });
