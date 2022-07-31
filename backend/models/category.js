@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema;
 
 const categorySchema = new mongoose.Schema({
     name: {
@@ -23,7 +24,7 @@ const categorySchema = new mongoose.Schema({
         default: false,
     },
     categories: [{
-        type: id,
+        type: ObjectId,
         ref: 'Category'
     }],
     active: {
