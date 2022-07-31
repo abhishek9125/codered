@@ -32,7 +32,7 @@ export const HEADER_CONSTANTS = [
             },
             {
                 name: 'Interview Bundles',
-                value: '/top-problems',
+                value: '/interview-bundle',
             },
             {
                 name: 'Mock Interviews',

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -21,9 +22,11 @@ function Tab({ data }) {
                         isDropdown &&
                             <div className="dropdown-content">
                                 {data.children.map((item, index) => (
-                                    <div key={index}>
-                                        {item.name}
-                                    </div>
+                                    <Link href={item.value}>
+                                        <div key={index}>
+                                            {item.name}
+                                        </div>
+                                    </Link>
                                 ))}
                             </div>
                     }
