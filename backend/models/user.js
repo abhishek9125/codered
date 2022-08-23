@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -71,17 +72,25 @@ const userSchema = new mongoose.Schema({
                 default: 0
             }
         }
+    }],
+    problemsSolved: [{
+        solved: {
+            type: Boolean,
+            default: false
+        },
+        problem: {
+            type: ObjectId, 
+            ref: 'Problem'
+        }
+     }],
+    upvote: [{
+        star: Number,
+        postedBy: { type: ObjectId, ref: 'Problem' }
+    }],
+    attempted: [{
+        solved: Boolean,
+        postedBy: { type: ObjectId, ref: 'Problem' }
     }]
-    // problemsSolved: [{
-    //     solved: {
-    //         type: Boolean,
-    //         default: false
-    //     },
-    //     problem: {
-    //         type: ObjectId, 
-    //         ref: 'Problems'
-    //     }
-    //  }]
 }, {
     timestamps: true
 });

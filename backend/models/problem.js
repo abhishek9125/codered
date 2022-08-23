@@ -44,14 +44,14 @@ const problemSchema = new mongoose.Schema({
         type: String,
         enum: ['Easy', 'Medium', 'Hard', 'Radiant']
     },
-    upvote: [{
-        star: Number,
-        postedBy: { type: ObjectId, ref: 'User' }
-    }],
-    attempted: [{
-        solved: Boolean,
-        postedBy: { type: ObjectId, ref: 'User' }
-    }]
+    averageTime: {
+        type: Number,
+        default: 0,
+    },    
+    averageTime: {
+        type: Number,
+        default: 0,
+    },
 }, {
     timestamps: true
 });
