@@ -14,7 +14,7 @@ exports.createCategory = async (req, res) => {
 
     const slug = createSlug(name);
 
-    const category = await Category.findOne({ slug }).exec();
+    const category = await Category.findOne({ slug }, '-_id').exec();
 
     if(category) {
         return res.status(400).json({
@@ -34,12 +34,12 @@ exports.createCategory = async (req, res) => {
             id = latestCategory[0].id + 1;
         }
 
-        await Category.create({ ...req.body, id });
+        const newCategory = await Category.create({ ...req.body, slug, id });
 
         return res.json({
             status: true,
             message: 'New Category Added Successfully',
-            data: { name, description, slug, id, isParent, active, categories }
+            data: { name, description, slug, id, isParent: newCategory.isParent, active: newCategory.active, categories: newCategory.categories }
         });
 
     } catch (error) {

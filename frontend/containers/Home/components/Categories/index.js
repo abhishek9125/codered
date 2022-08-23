@@ -1,12 +1,26 @@
-import Title from 'components/Title';
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import axios from 'axios';
+import config from 'config/env';
+import Title from 'components/Title';
+import Link from 'next/link';
 import { INTERVIEW_TOPICS } from 'utils/constants';
 
 function Categories() {
 
     const title = "Solve Interview Problem By Topic";
     const description = "Choose one of the topics to practice coding interview questions";
+
+    const [categories, setCategories] = useState([]);
+
+    const getCategories = async () => {
+        const response = await axios.get(`${config.apiUrl}/category/get-all-categories`);
+        setCategories(response.data.data)
+    }
+
+    useEffect(() => {
+        getCategories();
+    }, [])
 
     return (
         <Wrapper>
@@ -15,10 +29,12 @@ function Categories() {
 
             <div className="card-wrapper">
                 {
-                    INTERVIEW_TOPICS.map((topic, index) => (     
-                        <Card gradient={topic.gradient} key={index}>
-                                {topic.title}
-                        </Card>
+                    categories.map((topic, index) => (     
+                        <Link href="/problems">
+                            <Card gradient={INTERVIEW_TOPICS[index]} key={index}>
+                                    {topic.name}
+                            </Card>
+                        </Link>
                     ))
                 }
             </div>

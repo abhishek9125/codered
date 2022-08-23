@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import axios from 'axios';
+import config from 'config/env';
 import Title from 'components/Title';
 import { PROBLEM_SET_LIST } from 'utils/constants';
 import { Hamburger } from 'components/Icons';
+import Link from 'next/link';
 
 function ProblemSets() {
 
@@ -11,13 +14,26 @@ function ProblemSets() {
 
     const [active, setActive] = useState(false);
 
+    const [list, setList] = useState([]);
+
+    const getList = async () => {
+        const response = await axios.get(`${config.apiUrl}/list/get-all-lists`);
+        setList(response.data.data)
+    }
+
+    useEffect(() => {
+        getList();
+    }, [])
+
+    console.log(`list`, list)
+
     return (
         <Wrapper>
             <Title title={title} description={description} active={active} setActive={setActive} />
             <div className="box-wrapper">
                 {
-                    PROBLEM_SET_LIST.map((sheet, index) => {
-                        if(sheet.show_in_explore || active) {
+                    list.map((sheet, index) => {
+                        if(sheet.showInExplore || active) {
                             return (
                                 <div className="box" key={index}> 
                                     <div className="icon"> 

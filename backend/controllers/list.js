@@ -33,7 +33,7 @@ exports.createList = async (req, res) => {
             id = latestList[0].id + 1;
         }
 
-        await List.create({ name, description, slug, id });
+        await List.create({ ...req.body, slug, id });
 
         return res.json({
             status: true,
@@ -55,14 +55,14 @@ exports.updateList = async (req, res) => {
     
     const { name, description, slug } = req.body;
 
-    if(!name) {
+    if(!slug) {
         return res.status(400).json({
             status: false,
-            message: 'Name is required.'
+            message: 'Slug is required.'
         });
     }
 
-    const newSlug = createSlug(name);
+    const newSlug = name ? createSlug(name) : slug;
 
     try {
 
@@ -75,12 +75,12 @@ exports.updateList = async (req, res) => {
             });
         }
 
-        await List.findOneAndUpdate({ slug }, { ...req.body, newSlug } , { new: true }).exec();
+        const { name, description, showInExplore } = await List.findOneAndUpdate({ slug }, { ...req.body, newSlug } , { new: true }).exec();
 
         return res.json({
             status: true,
             message: 'List Updated Successfully',
-            data: { name, description, slug, id : list.id }
+            data: { name, description, slug, id : list.id, showInExplore }
         });
 
     } catch (error) {
@@ -96,7 +96,7 @@ exports.updateList = async (req, res) => {
 exports.fetchAllLists = async (req, res) => {
     
     try {
-        const lists = await List.find({}, 'name description slug id active -_id')
+        const lists = await List.find({}, 'name description slug id active showInExplore logo listType -_id')
         .sort([['createdAt', 'asc']])
         .exec();
 

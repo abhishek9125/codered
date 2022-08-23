@@ -8,14 +8,19 @@ const categorySchema = new mongoose.Schema({
     },
     description: {
         type: String,
+        default: "Important for FAANG Interviews"
     },
     id: {
         type: Number,
         required: true,
         index: true
     },
-    slug: {
+    position: {
         type: Number,
+        default: 0,
+    },
+    slug: {
+        type: String,
         required: true,
         unique: true,
     },
