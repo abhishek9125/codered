@@ -10,13 +10,26 @@ const listSchema = new mongoose.Schema({
     },
     id: {
         type: Number,
-        required: true
-    },
-    slug: {
-        type: Number,
         required: true,
         unique: true,
         index: true
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    showInExplore: {
+        type: Boolean,
+        default: false,
+    },
+    logo: {
+        type: String
+    },
+    listType: {
+        type: String,
+        enum: ['Expert', 'Company', 'Topic'],
+        required: true
     },
     active: {
         type: Boolean,
