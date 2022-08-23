@@ -36,7 +36,7 @@ export const HEADER_CONSTANTS = [
             },
             {
                 name: 'Mock Interviews',
-                value: '/compiler',
+                value: '/dashboard/admin',
             }
         ]
     },
