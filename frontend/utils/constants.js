@@ -1,3 +1,7 @@
+import Categories from "containers/AdminDashboard/components/Categories";
+import Companies from "containers/AdminDashboard/components/Companies";
+import Lists from "containers/AdminDashboard/components/Lists";
+
 export const HEADER_CONSTANTS = [
     {
         name: 'Practice',
@@ -166,5 +170,53 @@ export const PROBLEM_SET_LIST = [
         name: "Top Dynamic Programming Questions",
         slug: "top-dynamic-programming-questions",
         show_in_explore: true
+    },
+]
+
+export const ADMIN_LINKS = [
+    {
+        title: 'Lists',
+        id: 'list',
+        component: <Lists />
+    },
+    {
+        title: 'Levels',
+        id: 'level',
+        component: <Companies />
+
+    },
+    {
+        title: 'Problems',
+        id: 'problem',
+        component: <Companies />
+
+    },
+    {
+        title: 'Categories',
+        id: 'category',
+        component: <Categories />
+    },
+    {
+        title: 'Companies',
+        id: 'company',
+        component: <Companies />
+    },
+    {
+        title: 'Promotions',
+        id: 'promotion',
+        component: <Companies />
+
+    },
+    {
+        title: 'Trending',
+        id: 'trending',
+        component: <Companies />
+
+    },
+    {
+        title: 'Password',
+        id: 'password',
+        component: <Companies />
+
     },
 ]

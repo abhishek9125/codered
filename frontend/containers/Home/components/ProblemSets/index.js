@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import config from 'config/env';
 import Title from 'components/Title';
-import { PROBLEM_SET_LIST } from 'utils/constants';
 import { Hamburger } from 'components/Icons';
 import Link from 'next/link';
 

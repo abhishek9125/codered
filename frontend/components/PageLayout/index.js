@@ -23,7 +23,7 @@ function PageLayout({ children }) {
                     }}
                 />
                 {showLayout && <Header />}
-                {showLayout && <Promotions />}
+                {/* {showLayout && <Promotions />} */}
                 {children}
                 {showLayout && <Footer />}
                 <GlobalStyle />
