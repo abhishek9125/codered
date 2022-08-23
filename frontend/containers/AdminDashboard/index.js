@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { showLoginCard, setUserData } from 'containers/Auth/redux/actions';
 import { makeSelectLoggedIn } from 'containers/Auth/redux/selectors';
-import { customToast } from 'config/toast';
-import Link from 'next/link';
+import Sidebar from './components/Sidebar';
+import ActiveComponentHandler from './components/ActiveComponentHandler';
+import { ADMIN_LINKS } from 'utils/constants';
 
 function AdminDashboard() {
+    
+    const [activeComponent, setActiveComponent] = useState(ADMIN_LINKS[0]);
+
     return (
-        <div>
-            Hello World
-        </div>
+        <Wrapper>
+            <div className="sidebar">
+                <Sidebar setActiveComponent={setActiveComponent} />
+            </div>
+            <div className="active-component">
+                <ActiveComponentHandler activeComponent={activeComponent} />
+            </div>
+        </Wrapper>
     )
 }
 
@@ -26,3 +35,17 @@ const mapStateToProps = createStructuredSelector({
 });
   
 export default connect(mapStateToProps, mapDispatchToProps)(AdminDashboard);
+
+const Wrapper = styled.div`
+
+    display: flex;
+
+    .sidebar {
+        width: 20%;
+    }
+
+    .active-component {
+        width: 80%;
+    }
+
+`;
