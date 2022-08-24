@@ -44,11 +44,11 @@ const problemSchema = new mongoose.Schema({
         type: String,
         enum: ['Easy', 'Medium', 'Hard', 'Radiant']
     },
-    averageTime: {
+    upvote: {
         type: Number,
         default: 0,
     },    
-    averageTime: {
+    submissions: {
         type: Number,
         default: 0,
     },
