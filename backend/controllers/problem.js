@@ -93,7 +93,7 @@ exports.updateProblem = async (req, res) => {
             status: true,
             message: 'Problem Updated Successfully',
             data: { 
-                title, newSlug, id, description, averageTime, category, company, list, difficulty, attempted, upvote
+                title, newSlug, id, description, averageTime, category, company, list, difficulty, attempted, upvote, submission
             }
         });
 
@@ -108,6 +108,21 @@ exports.updateProblem = async (req, res) => {
 }
 
 exports.fetchAllProblems = async (req, res) => {
-    
+    try {
+        const problems = await Problem.find({}, 'title slug id description averageTime category company list difficulty attempted upvote -_id')
+        .sort([['createdAt', 'asc']])
+        .exec();
 
+        return res.status(200).json({
+            status: true,
+            message: 'Problems Fetched Successfully..!!',
+            data: problems
+        });
+
+    } catch(error) {
+        console.log('Error Fetching Problems : ', error);
+        res.status(400).json({
+            error: error.message
+        })
+    }
 }
