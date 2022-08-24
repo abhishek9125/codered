@@ -1,5 +1,6 @@
 import Categories from "containers/AdminDashboard/components/Categories";
 import Companies from "containers/AdminDashboard/components/Companies";
+import Levels from "containers/AdminDashboard/components/Levels";
 import Lists from "containers/AdminDashboard/components/Lists";
 
 export const HEADER_CONSTANTS = [
@@ -182,7 +183,7 @@ export const ADMIN_LINKS = [
     {
         title: 'Levels',
         id: 'level',
-        component: <Companies />
+        component: <Levels />
 
     },
     {

@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import config from 'config/env';
-import CreateCategory from './components/CreateCategory';
-import UpdateCategory from './components/UpdateCategory';
+import CreateLevel from './components/CreateLevel';
+import UpdateLevel from './components/UpdateLevel';
 
-function Categories() {
+function Levels() {
 
-    const [category, setCategory] = useState([]);
+    const [levels, setLevels] = useState([]);
     const [active, setActive] = useState(false);
-    const [editCategory, setEditCategory] = useState(null);
+    const [editLevels, setEditLevels] = useState(null);
 
-    const getCategory = async () => {
-        const response = await axios.get(`${config.apiUrl}/category/get-all-categories`);
-        setCategory(response.data.data)
+    const getLevels = async () => {
+        const response = await axios.get(`${config.apiUrl}/level/get-all-levels`);
+        setLevels(response.data.data)
     }
 
     const handleCreate = () => {
@@ -21,39 +21,39 @@ function Categories() {
     }
 
     const handleEdit = (item) => {
-        setEditCategory(item);
+        setEditLevels(item);
         setActive('edit');
     }
 
     const deleteItem = () => {
-        getCategory();
+        getLevels();
     }
 
     useEffect(() => {
-        getCategory();
+        getLevels();
     }, [active])
 
     if(active == 'create') {
         return (
-            <CreateCategory />
+            <CreateLevel />
         )
     } else if (active == 'edit') {
         return (
-            <UpdateCategory data={editCategory} setActiveState={setActive} />
+            <UpdateLevel data={editLevels} setActiveState={setActive} />
         )
     }
 
     return (
         <Wrapper>
 
-            <div className="create-category" onClick={handleCreate}>
+            <div className="create-level" onClick={handleCreate}>
                 Create
             </div>
 
-            <div className="category-wrapper">
+            <div className="level-wrapper">
                 {
-                    category.map((item) => (
-                        <div className="category-item">
+                    levels.map((item) => (
+                        <div className="level-item">
                             <div className="title">
                                 {item.name}
                             </div>
@@ -74,11 +74,11 @@ function Categories() {
     )
 }
 
-export default Categories;
+export default Levels;
 
 const Wrapper = styled.div`
 
-    .create-category {
+    .create-level {
         padding: 5px 10px;
         margin-bottom: 10px;
         background-color: ${({ theme }) => theme.general.primaryColor};   
@@ -89,7 +89,7 @@ const Wrapper = styled.div`
         cursor: pointer;
     }
 
-    .category-item {
+    .level-item {
         
         display: flex;
         justify-content: space-between;
