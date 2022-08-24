@@ -12,14 +12,15 @@ import { ADMIN_LINKS } from 'utils/constants';
 function AdminDashboard() {
     
     const [activeComponent, setActiveComponent] = useState(ADMIN_LINKS[0]);
+    const [active, setActive] = useState(false);
 
     return (
         <Wrapper>
             <div className="sidebar">
-                <Sidebar setActiveComponent={setActiveComponent} />
+                <Sidebar setActiveComponent={setActiveComponent} setActive={setActive} />
             </div>
             <div className="active-component">
-                <ActiveComponentHandler activeComponent={activeComponent} />
+                <ActiveComponentHandler activeComponent={activeComponent} active={active} setActive={setActive} />
             </div>
         </Wrapper>
     )

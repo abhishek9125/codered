@@ -100,7 +100,7 @@ exports.updateCategory = async (req, res) => {
 exports.fetchAllCategories = async (req, res) => {
     
     try {
-        const categories = await Category.find({}, 'name description slug id active isParent categories -_id')
+        const categories = await Category.find({}, 'name description slug id active isParent categories')
         .sort([['createdAt', 'asc']])
         .exec();
 

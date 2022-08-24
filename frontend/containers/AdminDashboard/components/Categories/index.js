@@ -5,10 +5,9 @@ import config from 'config/env';
 import CreateCategory from './components/CreateCategory';
 import UpdateCategory from './components/UpdateCategory';
 
-function Categories() {
+function Categories({ active, setActive }) {
 
     const [category, setCategory] = useState([]);
-    const [active, setActive] = useState(false);
     const [editCategory, setEditCategory] = useState(null);
 
     const getCategory = async () => {
