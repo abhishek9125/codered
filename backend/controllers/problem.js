@@ -129,3 +129,17 @@ exports.fetchAllProblems = async (req, res) => {
         })
     }
 }
+
+exports.removeProblem = async (req, res) => {
+    try {
+        const deleteProblem = await Problem.findOneAndDelete({ slug: req.params.slug });
+        return res.status(200).json({
+            status: true,
+            message: 'Problem Deleted Successfully..!!',
+            data: deleteProblem
+        });
+    } catch (error) {
+        console.log('Error Deleting Problem : ', error);
+        res.status(400).send('Error Deleting Problem');
+    }
+}

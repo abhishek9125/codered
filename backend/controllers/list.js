@@ -113,3 +113,17 @@ exports.fetchAllLists = async (req, res) => {
         })
     }
 }
+
+exports.removeList = async (req, res) => {
+    try {
+        const deleteList = await List.findOneAndDelete({ slug: req.params.slug });
+        return res.status(200).json({
+            status: true,
+            message: 'List Deleted Successfully..!!',
+            data: deleteList
+        });
+    } catch (error) {
+        console.log('Error Deleting List : ', error);
+        res.status(400).send('Error Deleting List');
+    }
+}
