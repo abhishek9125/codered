@@ -117,3 +117,17 @@ exports.fetchAllCategories = async (req, res) => {
         })
     }
 }
+
+exports.removeCategory = async (req, res) => {
+    try {
+        const deleteCategory = await Category.findOneAndDelete({ slug: req.params.slug });
+        return res.status(200).json({
+            status: true,
+            message: 'Category Deleted Successfully..!!',
+            data: deleteCategory
+        });
+    } catch (error) {
+        console.log('Error Deleting Category : ', error);
+        res.status(400).send('Error Deleting Category');
+    }
+}

@@ -113,3 +113,17 @@ exports.fetchAllCompanies = async (req, res) => {
         })
     }
 }
+
+exports.removeCompany = async (req, res) => {
+    try {
+        const deleteCompany = await Company.findOneAndDelete({ slug: req.params.slug });
+        return res.status(200).json({
+            status: true,
+            message: 'Company Deleted Successfully..!!',
+            data: deleteCompany
+        });
+    } catch (error) {
+        console.log('Error Deleting Company : ', error);
+        res.status(400).send('Error Deleting Company');
+    }
+}
