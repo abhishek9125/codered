@@ -4,10 +4,10 @@ import axios from 'axios';
 import config from 'config/env';
 import CreateList from './components/CreateList';
 import UpdateList from './components/UpdateList';
-function Lists() {
+
+function Lists({ active, setActive }) {
 
     const [list, setList] = useState([]);
-    const [active, setActive] = useState(false);
     const [editList, setEditList] = useState(null);
 
     const getList = async () => {
@@ -22,7 +22,6 @@ function Lists() {
     const handleEdit = (item) => {
         setEditList(item);
         setActive('edit');
-        
     }
 
     const deleteListItem = () => {

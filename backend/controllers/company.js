@@ -96,7 +96,7 @@ exports.updateCompany = async (req, res) => {
 exports.fetchAllCompanies = async (req, res) => {
     
     try {
-        const companies = await Company.find({}, 'name description logo slug id active -_id')
+        const companies = await Company.find({}, 'name description logo slug id active')
         .sort([['createdAt', 'asc']])
         .exec();
 

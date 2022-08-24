@@ -110,6 +110,9 @@ exports.updateProblem = async (req, res) => {
 exports.fetchAllProblems = async (req, res) => {
     try {
         const problems = await Problem.find({}, 'title slug id description averageTime category company list difficulty attempted upvote -_id')
+        .populate('category')
+        .populate('company')
+        .populate('list')
         .sort([['createdAt', 'asc']])
         .exec();
 

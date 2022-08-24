@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ActiveComponentHandler({ activeComponent }) {
+function ActiveComponentHandler({ activeComponent, active, setActive }) {
+
+    const parsedComponent = React.cloneElement(activeComponent.component,{ active, setActive })
+
     return (
         <Wrapper>
-            {activeComponent.component}
+            {parsedComponent}
         </Wrapper>
     )
 }
 
-export default ActiveComponentHandler
+export default ActiveComponentHandler;
 
 const Wrapper = styled.div`
 

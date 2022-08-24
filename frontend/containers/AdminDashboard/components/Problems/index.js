@@ -5,10 +5,9 @@ import config from 'config/env';
 import CreateProblem from './components/CreateProblem';
 import UpdateProblem from './components/UpdateProblem';
 
-function Problems() {
+function Problems({ active, setActive }) {
 
     const [problems, setProblems] = useState([]);
-    const [active, setActive] = useState(false);
     const [editProblems, setEditProblems] = useState(null);
 
     const getProblems = async () => {

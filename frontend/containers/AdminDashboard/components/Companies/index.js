@@ -5,10 +5,9 @@ import config from 'config/env';
 import CreateCompany from './components/CreateCompany';
 import UpdateCompany from './components/UpdateCompany';
 
-function Companies() {
+function Companies({ active, setActive }) {
 
     const [companies, setCompanies] = useState([]);
-    const [active, setActive] = useState(false);
     const [editCompanies, setEditCompanies] = useState(null);
 
     const getCompanies = async () => {

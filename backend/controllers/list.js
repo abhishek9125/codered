@@ -96,7 +96,7 @@ exports.updateList = async (req, res) => {
 exports.fetchAllLists = async (req, res) => {
     
     try {
-        const lists = await List.find({}, 'name description slug id active showInExplore logo listType -_id')
+        const lists = await List.find({}, 'name description slug id active showInExplore logo listType')
         .sort([['createdAt', 'asc']])
         .exec();
 

@@ -5,10 +5,9 @@ import config from 'config/env';
 import CreateLevel from './components/CreateLevel';
 import UpdateLevel from './components/UpdateLevel';
 
-function Levels() {
+function Levels({ active, setActive }) {
 
     const [levels, setLevels] = useState([]);
-    const [active, setActive] = useState(false);
     const [editLevels, setEditLevels] = useState(null);
 
     const getLevels = async () => {
