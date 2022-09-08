@@ -3,6 +3,7 @@ import Companies from "containers/AdminDashboard/components/Companies";
 import Levels from "containers/AdminDashboard/components/Levels";
 import Lists from "containers/AdminDashboard/components/Lists";
 import Problems from "containers/AdminDashboard/components/Problems";
+import Promotion from "containers/AdminDashboard/components/Promotions";
 
 export const HEADER_CONSTANTS = [
     {
@@ -126,7 +127,7 @@ export const ADMIN_LINKS = [
     {
         title: 'Promotions',
         id: 'promotion',
-        component: <Companies />
+        component: <Promotion />
     },
     {
         title: 'Trending',
